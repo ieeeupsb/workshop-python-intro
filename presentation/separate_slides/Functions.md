@@ -5,7 +5,7 @@ name: functions
 ---
 
 template: slide_normal
-## Functions - Introduction ##
+## Functions - Introduction 
 Functions are essential in keeping code efficient and readable.
 To define a function we declare:
 
@@ -18,6 +18,10 @@ When the result is achieved the keyword **return**(*value*)
 exits the function with a given value so that may be used on the function call.
 
 + Note: If the function reaches its end without reaching a return it will return ***None***.
+
+---
+
+## Functinos - Introduction
 
 Big projects often have innumerous functions and it is often very difficult
 to keep track of every single one of them.
@@ -74,6 +78,10 @@ Secondly we need to compute the final balance into a variable.
 ```python
 result = 1000 * (1 + p / 100) ** (10)
 ```
+
+---
+
+## Functions - Example
 
 Lastly, having achieved our goal, we return the result and finish writing the function.
 

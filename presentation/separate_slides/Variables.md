@@ -30,6 +30,11 @@ The explanation for the reassigned objects being deleted is that every object ha
 
 Please note that, as the documentation says, the reference count returned is generally one higher than you might expect, because it includes the (temporary) reference as an argument to getrefcount().
 
+???
+IMUTÁVEL:
+Ao alterar um objeto, ele ficará a apontar para um novo objeto ou para outro já existente
+MUTÁVEL:
+Altera o objeto em si
 ---
 
 ## Variable Naming

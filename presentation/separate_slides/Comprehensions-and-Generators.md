@@ -113,16 +113,52 @@ print(list(list_squares))
 
 ***Note:*** Inline generators should always be inside parenthesis.
 
+???
+
+Actual infinite generator (in the representable integer range)
+
+```py
+def infinite_generator():
+    a = 0
+    while (True):
+        yield a
+        a += 1
+```
+
 ---
 
 ### Conditions in Generators
 
-You can also use if else statements inside generators, for example, if you wanted, for example, to process elements differently according to a condition.  
-This next snippet halves even numbers and squares odd numbers:
+Conditions can be incorporated in one of two ways:
+- In the end, to indicate which elements to select:  
+Selecting all positive elements
+```py
+[n for n in alist if n > 0]  
+```
+- In the beginning, to indicate how to return the selected element:  
+Halving all even numbers and squaring all odd numbers
+```py
+[n / 2 if n % 2 == 0 else n**2 for n in alist]
+```
+
+---
+
+### Conditions in Generators
+
+For example, this next snippet combines both to halve even positive numbers and square positive odd numbers:
 
 ```py
-alist = [2, 3, 7, 20]
+alist = [-1, 2, -7, 3, 7, -9, -200, 20]
 print(list( [n / 2 if n % 2 == 0 else n**2 for n in alist] ))
 
 # [6, 9, 49, 10]
+```
+
+You can also chain multiple if else statements in the beginning, to create more complex generators:
+
+```py
+alist = [-4, -2, 0, 2, 4]
+[1 if n < 0 else 2 if n < 4 else 3 for n in alist]
+
+# [1, 1, 2, 2, 3]
 ```

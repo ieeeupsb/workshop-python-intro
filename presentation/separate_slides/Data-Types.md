@@ -23,6 +23,11 @@ Then, we can define:
      Some are ***mutable*** (are sucseptible to change) where as others are ***immutable***.
      Ex: boolean, integer, string, etc ...
 
+???
+
+int == conjunto dos numeros inteiros
+floats == conjunto dos numeros reais
+
 ---
 
 ## Numbers
@@ -78,7 +83,7 @@ The ***boolean*** type is used to store values for ***True*** or ***False***.
 Some variables can be converted to boolean by using:
 
 ```python
-bool("") # False
+bool("") # False (empty string)
 bool("qwerty") # True
 ```
 
@@ -111,6 +116,10 @@ a escape sequence \" can be used.
 ```python
 print("\"This is a quote\"")
 ```
+
+???
+
+Mencionar operadores (tipo o +) entre strings
 
 ---
 

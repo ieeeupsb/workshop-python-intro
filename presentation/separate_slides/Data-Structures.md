@@ -28,6 +28,10 @@ A **List** is an **ordered**, **mutable** sequence of elements. Each element ins
    <img src="assets/slicing.png" alt="List Indexing (Bird, Steven, Edward Loper and Ewan Klein (2009), Natural Language Processing with Python. O’Reilly Media Inc.)" width="auto" height="200px"/>
 </p>
 
+???
+
+Ordered, mutable
+
 ---
 
 ### Examples
@@ -91,6 +95,10 @@ In a shallow copy, it would not copy the inner data structures (only a reference
 
 As you might have noticed, **Strings** and **Lists** have many common properties, like indexing and slicing operations. They are both examples of sequence data types.  
 Methods that only modify the **List** have return value **None**. This is a design principle for all **mutable** data structures in **Python**.  
+
+???
+
+modify list -> return type None (all mutable data structures)
 
 ---
 
@@ -188,12 +196,15 @@ print("Our varibles:", x, y, z)
 name: sets
 ## Sets
 
-**Sets** are **unordered** collections of elements with **no duplicates**. Basic uses include membership testing and eliminating duplicate entries.  
+**Sets** are **unordered** **mutable** collections of elements with **no duplicates**. Basic uses include membership testing and eliminating duplicate entries.  
 Mathematical operations like union, intersection, difference, and symmetric difference.  
 - **Sets'** elements aren't indexed and we can't rely on them being in any specific order.  
 - To create a **Set**, we can use curly braces or the `set()` function. We should note that we can't do: `emptyset = {}` in order to create an empty set, as this would create an empty **[Dictionary](#dictionaries)**. To create an empty **Set**, we use: `emptyset = set()`.  
 - The `set()` function can also be used to cast an iterable to the **Set** type: `aset = set(iterable)`.  
 
+???
+
+Unsorted and mutable
 
 ---
 

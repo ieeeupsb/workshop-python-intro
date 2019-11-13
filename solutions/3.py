@@ -1,15 +1,16 @@
-num = int(input)
-num2 = num  # Preserve the num for the verification
+names = input().split()
 
-if (num == 0):  # If num is 0, it wouldn't enter the loop
-    res = "0"
-else:
-    res = ""  # Create an empty string to construct our solution over it
-    while num > 0:  # While there are digits to process
-        res += str(int(num % 8))  # 12 % 8 = 4, add "4" to our result
-        num = int(num / 8)  # 12 / 8 = 1, set our next num to 1
+name = ""
+if len(names) == 1:  # If there is only one word, our solution is done
+    name = names[0]
+else:  # There were two or more words
+    name = names[0]
 
-    res = res[::-1] # As we built our solution backwards, reverse the string
+    #  For every word in names, from index 1 to the penultimate one
+    for i in range(1, len(names) - 1):  # If len(names) is 2, this loop won't run
+        if names[i].capitalize() == names[i]:  # If the word is capitalized, to ignore "da", "de", etc
+            name += " " + names[i][0] + "."  # Add the first letter (already capitalized)
 
-print("Result: 0o", res, sep="")
-print("Confirmation:", oct(num2)) # Use this to confirm your results
+    name += " " + names[-1] # Add the last name
+
+print(name)

@@ -149,6 +149,11 @@ The explanation for the reassigned objects being deleted is that every object ha
 
 Please note that, as the documentation says, the reference count returned is generally one higher than you might expect, because it includes the (temporary) reference as an argument to getrefcount().
 
+???
+IMUTÁVEL:
+Ao alterar um objeto, ele ficará a apontar para um novo objeto ou para outro já existente
+MUTÁVEL:
+Altera o objeto em si
 ---
 
 ## Variable Naming
@@ -211,6 +216,11 @@ Then, we can define:
      Some are ***mutable*** (are sucseptible to change) where as others are ***immutable***.
      Ex: boolean, integer, string, etc ...
 
+???
+
+int == conjunto dos numeros inteiros
+floats == conjunto dos numeros reais
+
 ---
 
 ## Numbers
@@ -266,7 +276,7 @@ The ***boolean*** type is used to store values for ***True*** or ***False***.
 Some variables can be converted to boolean by using:
 
 ```python
-bool("") # False
+bool("") # False (empty string)
 bool("qwerty") # True
 ```
 
@@ -299,6 +309,10 @@ a escape sequence \" can be used.
 ```python
 print("\"This is a quote\"")
 ```
+
+???
+
+Mencionar operadores (tipo o +) entre strings
 
 ---
 
@@ -582,6 +596,10 @@ else: print("a < b")
 | True | logical true |
 | False | logical false |
 
+???
+
+equality != from attribution
+:= can do both at the same time from Python 3.8 onwards
 
 ---
 
@@ -609,6 +627,9 @@ Another structure of a **For** loop will be presented in [Iteration](#iteration)
 ```python
 for i in range(3):
     print(i)
+    break
+else
+    print("Else clause")
 ```
 
 ---
@@ -655,6 +676,10 @@ A **List** is an **ordered**, **mutable** sequence of elements. Each element ins
 <p align="center">
    <img src="assets/slicing.png" alt="List Indexing (Bird, Steven, Edward Loper and Ewan Klein (2009), Natural Language Processing with Python. O’Reilly Media Inc.)" width="auto" height="200px"/>
 </p>
+
+???
+
+Ordered, mutable
 
 ---
 
@@ -719,6 +744,10 @@ In a shallow copy, it would not copy the inner data structures (only a reference
 
 As you might have noticed, **Strings** and **Lists** have many common properties, like indexing and slicing operations. They are both examples of sequence data types.  
 Methods that only modify the **List** have return value **None**. This is a design principle for all **mutable** data structures in **Python**.  
+
+???
+
+modify list -> return type None (all mutable data structures)
 
 ---
 
@@ -816,12 +845,15 @@ print("Our varibles:", x, y, z)
 name: sets
 ## Sets
 
-**Sets** are **unordered** collections of elements with **no duplicates**. Basic uses include membership testing and eliminating duplicate entries.  
+**Sets** are **unordered** **mutable** collections of elements with **no duplicates**. Basic uses include membership testing and eliminating duplicate entries.  
 Mathematical operations like union, intersection, difference, and symmetric difference.  
 - **Sets'** elements aren't indexed and we can't rely on them being in any specific order.  
 - To create a **Set**, we can use curly braces or the `set()` function. We should note that we can't do: `emptyset = {}` in order to create an empty set, as this would create an empty **[Dictionary](#dictionaries)**. To create an empty **Set**, we use: `emptyset = set()`.  
 - The `set()` function can also be used to cast an iterable to the **Set** type: `aset = set(iterable)`.  
 
+???
+
+Unsorted and mutable
 
 ---
 
@@ -1116,7 +1148,7 @@ name: functions
 ---
 
 template: slide_normal
-## Functions - Introduction ##
+## Functions - Introduction 
 Functions are essential in keeping code efficient and readable.
 To define a function we declare:
 
@@ -1129,6 +1161,10 @@ When the result is achieved the keyword **return**(*value*)
 exits the function with a given value so that may be used on the function call.
 
 + Note: If the function reaches its end without reaching a return it will return ***None***.
+
+---
+
+## Functinos - Introduction
 
 Big projects often have innumerous functions and it is often very difficult
 to keep track of every single one of them.
@@ -1185,6 +1221,10 @@ Secondly we need to compute the final balance into a variable.
 ```python
 result = 1000 * (1 + p / 100) ** (10)
 ```
+
+---
+
+## Functions - Example
 
 Lastly, having achieved our goal, we return the result and finish writing the function.
 
@@ -1419,19 +1459,56 @@ print(list(list_squares))
 
 ***Note:*** Inline generators should always be inside parenthesis.
 
+???
+
+Actual infinite generator (in the representable integer range)
+
+```py
+def infinite_generator():
+    a = 0
+    while (True):
+        yield a
+        a += 1
+```
+
 ---
 
 ### Conditions in Generators
 
-You can also use if else statements inside generators, for example, if you wanted, for example, to process elements differently according to a condition.  
-This next snippet halves even numbers and squares odd numbers:
+Conditions can be incorporated in one of two ways:
+- In the end, to indicate which elements to select:  
+Selecting all positive elements
+```py
+[n for n in alist if n > 0]  
+```
+- In the beginning, to indicate how to return the selected element:  
+Halving all even numbers and squaring all odd numbers
+```py
+[n / 2 if n % 2 == 0 else n**2 for n in alist]
+```
+
+---
+
+### Conditions in Generators
+
+For example, this next snippet combines both to halve even positive numbers and square positive odd numbers:
 
 ```py
-alist = [2, 3, 7, 20]
+alist = [-1, 2, -7, 3, 7, -9, -200, 20]
 print(list( [n / 2 if n % 2 == 0 else n**2 for n in alist] ))
 
 # [6, 9, 49, 10]
 ```
+
+You can also chain multiple if else statements in the beginning, to create more complex generators:
+
+```py
+alist = [-4, -2, 0, 2, 4]
+[1 if n < 0 else 2 if n < 4 else 3 for n in alist]
+
+# [1, 1, 2, 2, 3]
+```
+
 ---
 template: slide_section
 name: modules

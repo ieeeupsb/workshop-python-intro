@@ -52,6 +52,10 @@ else: print("a < b")
 | True | logical true |
 | False | logical false |
 
+???
+
+equality != from attribution
+:= can do both at the same time from Python 3.8 onwards
 
 ---
 
@@ -79,6 +83,9 @@ Another structure of a **For** loop will be presented in [Iteration](#iteration)
 ```python
 for i in range(3):
     print(i)
+    break
+else
+    print("Else clause")
 ```
 
 ---

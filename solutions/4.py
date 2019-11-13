@@ -1,16 +1,14 @@
-names = input().split()
+#  Function with 2 arguments, the full string and the separator
+def convert_camel_case(string, sep):
+    res = ""
+    for char in string:
+        if char.isupper():  # If it's an uppercase, add it lowered with the sep
+            res += sep + char.lower()
+        else:
+            res += char  # Else add the same char
+    return res
 
-name = ""
-if len(names) == 1:  # If there is only one word, our solution is done
-    name = names[0]
-else:  # There were two or more words
-    name = names[0]
-
-    #  For every word in names, from index 1 to the penultimate one
-    for i in range(1, len(names) - 1):  # If len(names) is 2, this loop won't run
-        if names[i].capitalize() == names[i]:  # If the word is capitalized, to ignore "da", "de", etc
-            name += " " + names[i][0] + "."  # Add the first letter (already capitalized)
-
-    name += " " + names[-1] # Add the last name
-
-print(name)
+string = input()
+sep = input()
+print("Function:", convert_camel_case(string, sep))  # Call the function and print its return value
+print("Generator:", "".join([(sep + letter.lower()) if letter.isupper() else letter for letter in string]))
