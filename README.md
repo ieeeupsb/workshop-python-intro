@@ -16,12 +16,15 @@ Link to our [wiki's Home page](../../wiki/Home)
 1. [Iteration](../../wiki/Iteration)
 1. [Functions](../../wiki/Functions)
 1. [Comprehensions and Generators](../../wiki/Comprehensions-and-Generators)
+1. [Decorators](../../wiki/Decorators)
+1. [Object Oriented Programming](../../wiki/Object-Oriented-Programming)
 1. [Modules](../../wiki/Modules)
 
 ## Exercises and Solutions
 
 1. [Exercises](../../wiki/Exercises)
 1. [Solutions](../../wiki/Solutions)
+1. [OOP Exercises](../../wiki/OOP-Exercises)
 
 ## Recommended IDEs
 - [Spyder/Anaconda](https://www.anaconda.com/distribution/): Installs python and various modules for you, recommended for an easier setup.
