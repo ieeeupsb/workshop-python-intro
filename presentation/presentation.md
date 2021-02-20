@@ -22,8 +22,8 @@ template: slide_title
 # Workshop Introduction to Python 3
 
 <div class="slide_logos">
-<img alt="nuieee-logo" src="assets/nuieee-logo.png">
-<img alt="cs-logo" src="assets/computer-society-logo.svg">
+<img alt="nuieee-logo" src="assets/nuieee-logo.png" height=200 >
+<img alt="cs-logo" src="assets/computer-society-logo.svg" height=200 >
 </div>
 
 ---
