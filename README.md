@@ -31,6 +31,8 @@ Link to our [wiki's Home page](../../wiki/Home)
 - [VS Code](https://code.visualstudio.com/Download): Requires the manual installation of the [most recent version of Python 3](https://www.python.org/downloads/). Please refer to [Python in VS Code](https://code.visualstudio.com/docs/languages/python) for more detailed instructions. We recommend the Code Runner extension (present on the website listed above).
 - [Vim](https://www.vim.org/): [Vim8](https://vim8.org/) or [NeoVim](https://neovim.io/) prefered. Only use if you are familiar with Vim. Recommended extensions: coc, coc-python (node.js required for both).
 
+If you don't want to install Python and/or an IDE you can also use websites that interpret Python code, such as [online-python.com](https://www.online-python.com/).
+
 ## Other Resources
 
 - Python Standard Library (Latest 3.x version released)
