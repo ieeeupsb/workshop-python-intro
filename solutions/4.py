@@ -6,7 +6,7 @@ def convert_camel_case(string, sep):
             res += sep + char.lower()
         else:
             res += char  # Else add the same char
-    return res
+    return res[1:]
 
 string = input()
 sep = input()
